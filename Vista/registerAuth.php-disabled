@@ -1,0 +1,26 @@
+<?php
+if (isset($_POST['btnRegister'])) {
+	$txtUser_r = $_POST['user_r'];
+	$txtEmail_r = $_POST['email_r'];
+	$txtPassword_r = $_POST['password_r'];
+
+
+	include "../modelo/conexion.php";
+	//$conn
+	//Consulta a BD
+	$sql = "INSERT INTO usuarios (user, correo, password) 
+            VALUES ('$txtUser_r','$txtEmail_r','$txtPassword_r')";
+	$result = $conn->query($sql);
+	if ($result) {
+
+		session_start();
+		$_SESSION['admin'] = $txtUser_r;
+		header("location: modelo/admin.php");
+		exit();
+	}
+
+	header("Location: ../modelo/register.php?msg=ERROR DE REGISTRO");
+}
+
+
+//version de benneton 1.1 PHP

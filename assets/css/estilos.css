@@ -1,0 +1,142 @@
+* {
+  font-family: Raleway;
+}
+
+body {
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: grey;
+  background-image: url("img/fondo-back.jpg");
+  background-size: auto;
+  background-image: fixed;
+  background-image: center;
+  font-family: "Raleway", sans-serif;
+  background-position: 50% 50%;
+}
+
+/* BOTON */
+
+.button:active {
+  background: #007a63;
+}
+
+.button__text {
+  font: bold 20px "Quicksand", san-serif;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* FIN BOTON  */
+
+.cabecera {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 10px;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-display: initial;
+}
+
+h3 {
+  align-items: center;
+}
+
+#contenedor-1 {
+  border: solid 1px;
+  border-color: grey;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(158, 155, 155, 0.863);
+}
+
+#olvi,
+#olvi-2 {
+  justify-content: center;
+  justify-items: center;
+  display: grid;
+  color: #ff0000;
+  text-decoration: none;
+}
+
+:hover #olvi,
+#olvi-2 {
+  color: orange;
+}
+
+#logo {
+  align-items: center;
+}
+
+#btnLogin {
+  background-color: rgb(64, 64, 65);
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 5px;
+  width: 150px;
+  height: 35px;
+  margin: 50px;
+}
+
+:hover#btnLogin {
+  cursor: pointer;
+  color: rgb(122, 122, 125);
+  position: center;
+}
+
+#email,
+#password {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+}
+
+#email_r,
+#password_r,
+#user_r {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+}
