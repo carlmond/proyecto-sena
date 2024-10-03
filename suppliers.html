@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar Menu for Admin Dashboard | CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    integrity="sha384-..." crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <nav class="sidebar">
+    <a href="#" class="logo">Bienvenido</a>
+
+    <div class="menu-content">
+      <ul class="menu-items">
+        <div class="menu-title"> Papelería Benneton</div>
+
+        <li class="item">
+          <div class="submenu-item">
+            <span class="bi bi-house-gear"> Opciones</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="menu-items submenu">
+            <div class="menu-title">
+              <i class="fa-solid fa-chevron-left"></i>
+              Volver
+            </div>
+            <li class="item"><a href="#">Inventario</a></li>
+            <li class="item"><a href="#">Facturación</a></li>
+            <li class="item"><a href="#">Ventas</a></li>
+          </ul>
+        </li>
+
+        <li class="item">
+          <div class="submenu-item">
+            <span class="bi bi-nut"> Configuración</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="menu-items submenu">
+            <div class="menu-title">
+              <i class="fa-solid fa-chevron-left"></i>
+              Volver
+            </div>
+            <li class="item"><a href="#">Cambiar Contraseña</a></li>
+            <li class="item"><a href="#" class="bi bi-nut"> Editar Usuario</a></li>
+            <li class="item"><a href="#">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+
+        <li class="item"><a href="#" class="bi bi-box-arrow-right"> Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-primary bg-primary">
+    <i class="fa-solid fa-bars" id="sidebar-close"></i>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Buscar</button>
+    </form>
+  </nav>
+
+  <main class="main">
+    <div class="container mt-3">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5>Proveedores</h5>
+          <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#modal-add-supplier">Añadir Proveedor</button>
+            <button class="btn btn-secondary">Filtros</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Empresa SAS</td>
+                <td>Libro</td>
+                <td>1538913275</td>
+                <td>Empresa@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Empresa SAS</td>
+                <td>Libro</td>
+                <td>1538913275</td>
+                <td>Empresa@gmail.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Page">
+            <ul class="pagination justify-content-between">
+              <li class="page-item disabled">
+                <a class="page-link">Anterior</a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link">página 1 de 10</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-add-supplier" tabindex="-1" aria-labelledby="modal-add-supplier" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modal-add-supplier">Nuevo Proveedor</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="supplierName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="supplierName" placeholder="Ingresa el nombre del proveedor">
+              </div>
+              <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contacto</label>
+                <input type="text" class="form-control" id="contactNumber" placeholder="Ingresa el número de contacto">
+              </div>
+              <div class="mb-3">
+                <label for="product" class="form-label">Producto</label>
+                <input type="text" class="form-control" id="product" placeholder="Ingresa el producto">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingresa el correo electrónico">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-secondary">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Agregar Proveedor</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
