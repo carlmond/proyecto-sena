@@ -113,12 +113,13 @@
 }
 .main {
   position: relative;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  display: block; 
+  height: auto; 
   z-index: 100;
   background: #e7f2fd;
+  padding: 20px;
 }
+
 .main h1 {
   color: #11101d;
   font-size: 40px;
